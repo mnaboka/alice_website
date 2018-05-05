@@ -1,7 +1,7 @@
 IMAGE_NAME=alice_website
 CONTAINER_NAME=$(IMAGE_NAME)-test
 
-all: docker stop start
+all: stop start
 
 docker:
 	@echo "+$@"
@@ -14,7 +14,7 @@ start:
 			--rm \
 			-p8000:8000 \
 			--name $(CONTAINER_NAME) \
-			$(IMAGE_NAME)
+			$(IMAGE_NAME):latest
 	@echo "\n\nWebsite available on http://127.0.0.1:8000"
 
 stop:
