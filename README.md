@@ -24,6 +24,15 @@ How to use
    be any job you have executed on jenkins.
 10. Go to `[http://127.0.0.1:8000](http://127.0.0.1:8000)` and enjoy your website.
 
+Note the jenkins job is setup to pull changes every minute from a github repo
+`https://github.com/mnaboka/alice_website`. It will check for changes and trigger
+a build if found.
+
+I am using a trick to run a docker inside the docker environment. A job running
+on jenkins and executes `docker` command is actually running it from a host.
+This is why all this magic is possible
+
+
 Requirements
 ============
 
