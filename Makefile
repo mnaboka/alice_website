@@ -5,7 +5,7 @@ all: docker stop start
 
 docker:
 	@echo "+$@"
-	docker build -t $(IMAGE_NAME) .
+	docker build -t "$(IMAGE_NAME):$(BUILD_NUMBER)" .
 
 start:
 	@echo "+$@"
