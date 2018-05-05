@@ -6,7 +6,7 @@ How to use
 
 1. Copy `jenkins_home` folder to root of this repo.
 2. Build and run a CI image (jenkins) with command `make ci-start`
-3. Login into jenkins web interface `[http://127.0.0.1:8080](http://127.0.0.1:8080)`
+3. Login into jenkins web interface [http://127.0.0.1:8080](http://127.0.0.1:8080)
    use login/password `admin:admin`.
 4. There is one job called `website-ci` which is used for Alice's CI, you can
    click on it.
@@ -22,7 +22,7 @@ How to use
 9. If you need to use any other image from the build just run
    `BUILD_NUMBER=2 make`. I used 2 as for the jenkins build number. But it can
    be any job you have executed on jenkins.
-10. Go to `[http://127.0.0.1:8000](http://127.0.0.1:8000)` and enjoy your website.
+10. Go to [http://127.0.0.1:8000](http://127.0.0.1:8000) and enjoy your website.
 
 Note the jenkins job is setup to pull changes every minute from a github repo
 `https://github.com/mnaboka/alice_website`. It will check for changes and trigger
