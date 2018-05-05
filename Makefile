@@ -20,3 +20,23 @@ start:
 stop:
 	@echo "+$@"
 	docker kill $(CONTAINER_NAME) > /dev/null 2>&1 || true
+
+ci:
+	@echo "+$@"
+	docker build -t ci:latest jenkins
+
+ci-start: ci
+	@echo "+$@"
+	docker run \
+			-d \
+			--rm \
+			-p8080:8080 \
+			-v $(PWD)/jenkins_home:/var/jenkins_home \
+			-v /var/run/docker.sock:/var/run/docker.sock \
+			--privileged \
+			--name jenkins-ci \
+			ci:latest
+
+ci-stop:
+	@echo "+$@"
+	docker kill jenkins-ci > /dev/null 2>&1 || true
